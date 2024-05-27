@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>{{ title }}</span>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav class="sidenav" fixedInViewport="true">
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['']">Home</a>
+      <a mat-list-item [routerLink]="['/test']">Test</a>
+      <a mat-list-item [routerLink]="['/hospitales']">Hospitales</a>
+      <a mat-list-item [routerLink]="['/agregar']">Hospital Nuevo</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
